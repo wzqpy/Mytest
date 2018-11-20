@@ -1,0 +1,306 @@
+
+*{ padding: 0;margin: 0;}
+ul,li{ padding:0;margin:0;list-style:none}
+
+body{
+    background-color: #d4d4d4;
+}
+
+
+.main-content-band{
+    background-color:#f4f3f4;
+
+}
+/* 头部导航栏 */
+.head-band{
+    width: 100%;
+    height: 50px;
+    background-color: #2459a2;
+}
+
+.head-content {
+    width: 1016px;
+    margin: 0 auto;
+    line-height: 44px;
+    height: 44px;
+    position: relative;
+}
+#logo1{
+    height: 44px;
+    float: left;
+    position: relative;
+}
+
+.action-menu{
+    position: relative;
+}
+
+.action-menu a{
+    float: left;
+    width: 80px;
+    color: white;
+    text-decoration:none;
+    text-align: center;
+    /*行内块*/
+    display: inline-block;
+}
+/*导航栏链接被点击的时候*/
+a.active {
+    color: #fff;
+    background-color: #204982;
+}
+
+/*用的bootstrap模型，然后根据情况在修改部分参数，调整位置*/
+.navbar-form{
+    padding-left: 50px;
+    margin-top: 0;
+}
+
+
+.action-nav{
+    margin-left: 90px;
+    float: left;
+}
+
+.main-content{
+    height: 100%;
+    background-color: #f4f3f4;
+
+}
+
+
+/* 左边内容发布区*/
+
+.content-left {
+    width: 630px;
+    height: 100%;
+    margin-left: 140px;
+    float: left;
+    background-color: #f4f3f4;
+}
+
+.child-nav div{
+    margin: 5px;
+    margin-right: 20px;
+    display: inline-block;
+    float: left;
+    width: 60px;
+    text-align: center;
+
+}
+
+.sort-nav div{
+    margin: 5px;
+    display: inline-block;
+    float: left;
+    width: 60px;
+    text-align: center;
+}
+
+.hotts-nav-btn{
+    border-radius:25px;
+}
+.nav-top-area a{
+    display: inline-block;
+}
+
+.nav-publish-btn{
+    padding-left: 40px;
+    margin: 5px;
+    float: left;
+    width: 140px;
+    border-radius:25px;
+    background-color: #5cb85c;
+}
+
+
+.publish-btn{
+    display: inline-block;
+    text-align: center;
+}
+
+
+/*帖子*/
+.content-news{
+
+    float: left;
+    width:560px;
+    margin: 25px 25px 1px 25px;
+    border-style:solid;
+    border-width:1px;
+}
+.content-part{
+    float: left;
+}
+.content-part1 p{
+    margin: 10px;
+    width:400px;
+    float: left;
+
+}
+
+.content-userlogo a img{
+    margin: 20px;
+    float: right;
+    height: 50px;
+}
+
+
+.nav-content-list{
+
+    /*background-color: #9acfea;*/
+    float: left;
+}
+
+.nav-content-list li{
+    float: left;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+
+/*css 雪碧图*/
+.news-like a{
+    width: 30px;
+    height: 20px;
+    display: block;
+    background:url("../img/1.png");
+    background-position: 0 -40px;
+    background-repeat: no-repeat;
+
+}
+
+.news-comment a{
+    width: 30px;
+    height: 20px;
+    display: block;
+    background:url("../img/1.png");
+    background-position: 0 -100px;
+    background-repeat: no-repeat;
+
+}
+
+.news-collect a{
+    width: 30px;
+    height: 20px;
+    display: block;
+    background:url("../img/1.png");
+    background-position: 0 -160px;
+    background-repeat: no-repeat;
+
+}
+
+.news-user{
+    width: 100px;
+}
+
+.news-user a img{
+    height: 20px;
+}
+
+/*下滑帖子回复*/
+.user-comment{
+    width: 560px;
+    background-color: #bce8f1;
+    float: left;
+    border-style:solid;
+    border-width:1px;
+}
+
+/*右边内容*/
+.content-right{
+    width: 400px;
+    height: 100%;
+    float: left;
+    background-color: #f4f3f4;
+}
+.picture-right{
+    padding-top: 15px;
+    float: left;
+}
+
+.picture-right img{
+    height: 82px;
+}
+
+.content-right-top{
+    padding: 20px;
+    height: 50px;
+    line-height: 20px;
+    float: left;
+    display: inline-block;
+}
+
+#logo22{
+    height: 20px;
+}
+
+#logo33{
+    height: 240px;
+}
+
+.top-band{
+    margin: 5px;
+    font-size: 20px;
+}
+.top-band span{
+    color: red;
+}
+
+.top-band-title{
+    height: 40px;
+    width: 365px;
+    background-color: #31b0d5;
+
+}
+.no-comment-title{
+    padding: 5px;
+    text-align: center;
+}
+
+/*分隔线条样式*/
+.hr0{
+    width: 365px;
+    height:1px;
+    border:none;
+    border-top:1px dashed #1E90FF;}
+
+.top-contend-news{
+    width: 365px;
+    font-size: 12px;
+
+}
+
+.top-points{
+    float: left;
+    color: black;
+    margin: 10px;
+    background-color: #9d9d9d;
+}
+
+.top-points span{
+    color: black;
+    margin: 8px;
+
+}
+.top-content{
+    font-size: 16px;
+    float: left;
+    margin: 10px;
+}
+
+#logo44{
+    width: 350px;
+
+}
+/*底部页签*/
+
+.page-area{
+    text-align: center;
+}
+
+
+
+
+
+

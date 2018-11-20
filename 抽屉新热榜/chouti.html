@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--添加meta-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>抽屉新热榜</title>
+    <!--插件信息-->
+    <!--<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+<body>
+<!--页面topbar-->
+<div class="head-band">
+    <div class="head-content">
+        <a href="#" class="digg-logo"><img src="img/logo1.png" alt="抽屉新热榜" id="logo1"></a>
+        <ul class="action-menu ">
+
+            <li><a href="" class="tb ">全部</a></li>
+            <li><a href="" class="tb">42区</a></li>
+            <li><a href="" class="tb">图片</a></li>
+            <li><a href="" class="tb">挨踢1024</a></li>
+            <li><a href="" class="tb">你问我答</a></li>
+
+        </ul>
+
+        <div class="key-sera" >
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="">
+                </div>
+                <a href=""><span class="glyphicon glyphicon-search"></span></a>
+            </form>
+        </div>
+        <div class="action-nav">
+            <ul class="nav navbar-nav">
+                <!--添加，模态框 data-toggle-->
+                <li><a id="login1" style="color: black;" data-toggle="modal" data-target="#myModal-one">注册</a></li>
+                <li><a id="login2" style="color: black;" data-toggle="modal" data-target="#myModal-two">登录</a></li>
+            </ul>
+        </div>
+        <!--模态框登录:
+          class = modal 调用一个模态框   class= fade 调用一个淡入淡出的的css
+          aria-labelledby 该属性引用模态框的标题
+          aria-hidden="true" 用于保持模态窗口不可见，直到触发器被触发为止
+          class="close"，close 是一个 CSS class，用于为模态窗口的关闭按钮设置样式。
+        -->
+
+        <div class="modal fade" id="myModal-one" tabindex="-1" role="dialog" aria-labelledby="myModalLabelone" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!--✘按钮-->
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <div class="modal-content-title">登录</div>
+                    </div>
+
+                    <div class="modal-body my-modal-body">
+                        <!--nav-pills基本的胶囊式导航菜单-->
+                        <ul class="nav nav-pills">
+                            <li class="active"><a href="#">手机号登录</a></li>
+                            <li ><a href="#">用户名登录</a></li>
+                        </ul>
+
+                        <!--手机号登录-->
+                        <div class="my-phone-login">
+                            <form>
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option>中国（+86）</option>
+                                        <option>中国香港（+852）</option>
+                                        <option>中国澳门（+853）</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="exampleInputText" placeholder="手机号">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" id="exampleInputPassword" placeholder="密码">
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" checked> <small>一个月内自动登录</small>
+                                    </label>
+                                    <small>&nbsp;&nbsp;&nbsp;&nbsp;忘记密码？</small>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!--用户名登录-->
+                        <div class="my-user-login">
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control"  placeholder="用户名">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control"  placeholder="密码">
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <!--checeked锁定-->
+                                        <input type="checkbox" checked> <small>一个月内自动登录</small>
+                                    </label>
+                                    <small>&nbsp;&nbsp;&nbsp;&nbsp;忘记密码？</small>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!--<button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>-->
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">登录</button>
+                    </div>
+
+                </div><!-- /.modal -->
+            </div>
+        </div>
+
+        <!--模态框注册-->
+        <div class="modal fade" id="myModal-two" tabindex="-1" role="dialog" aria-labelledby="myModalLabelone" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <!--✘按钮-->
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <div class="modal-content-title">1填写手机号 <span> >2填写基本内容</span></div>
+
+                        </div>
+
+                        <div class="modal-body my-modal-body">
+
+                            <!--手机号登录-->
+                            <div class="my-phone-login">
+                                <form>
+                                    <div class="form-group">
+                                        <select class="form-control">
+                                            <option>中国（+86）</option>
+                                            <option>中国香港（+852）</option>
+                                            <option>中国澳门（+853）</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group form-inline">
+                                        <input type="text" class="form-control" id="exampleInputText3" placeholder="手机号">
+                                        <button type="submit" class="btn btn-primary">获取验证码</button>
+                                    </div>
+                                    <div class="form-group text-right" style="margin-top: -10px;">
+                                        <small>收不到短信？</small>
+                                        <small style="color: #337ab7;">获取语音验证码</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="exampleInputText4" placeholder="验证码">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" id="exampleInputPassword3" placeholder="密码">
+                                    </div>
+                                </form>
+                            </div>
+
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">下一步</button>
+                        </div>
+
+                    </div><!-- /.modal -->
+                </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<div class="main-content-band">
+    <div class="main-content">
+        <!--左边内容区-->
+        <div class="content-left">
+            <!--最新最热按钮-->
+            <div class="nav-top-area">
+                <div class="child-nav">
+                    <div><a href=""  class="hotbtn  icons" id="hotts-nav-btn">最热</a></div>
+                    <div><a href=""  class="newbtn" id="newest-nav-btn">发现</a></div>
+                    <div><a href=""  class="personbtn" id="person-nav-btn">人类发布</a></div>
+                </div>
+
+                <div class="sort-nav">
+                    <div><a href=""  class="hotbtn" id="sort-nav-btn">即时排序</a></div>
+                    <div><a href=""  class="newbtn" id="sort24-nav-btn">24小时</a></div>
+                    <div><a href=""  class="newbtn" id="sort3-nav-btn">3天</a></div>
+                </div>
+                <div class="nav-publish-btn">
+                    <a href="" class="publish-btn" id="publishBtn" lang="all">
+                    <span class="ico n1">+</span>
+                    <span class="n2">发布</span></a>
+                </div>
+
+
+            </div>
+            <!--内容显示区域-->
+
+            <!--1.更新页面按钮 2.已经发布的信息流 3.底部页签栏-->
+
+            <div class="content-list" id="content-list">
+                <!--第一个新闻-->
+                <div class="content-news">
+                <!--内容及头像图片-->
+                <div class="content-part">
+                    <div class="content-part1">
+                        <a href=""><p>沙特国王萨勒曼、王储穆罕默德·本·萨勒曼在王宫接见了被害记者卡舒吉的儿子萨拉赫</p></a>
+                    </div>
+                    <ul class="nav-content-list">
+                        <li class="news-like"><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;111</a></li>
+                        <li class="news-comment"><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;222</a></li>
+                        <li class="news-collect"><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;333</a></li>
+                        <li class="news-user"><a href=""><img src="img/user111.jpg" alt="yonghu">&nbsp;agen</a></li>
+                        <li class="news-time"><a href="" style="font-size: 12px">10分钟前</a> <small style="color:#f0b02d">发布</small></li>
+                    </ul>
+
+                </div>
+                <!--头像栏-->
+                <div class="content-userlogo">
+                    <a href=""><img src="img/user222.jpg" alt="用户照片"></a>
+                </div>
+                <div class="user-comment">
+                    最热评论
+
+                </div>
+
+
+
+
+            </div>
+                <!--第二个新闻-->
+                <div class="content-news">
+                    <!--内容及头像图片-->
+                    <div class="content-part">
+                        <div class="content-part1">
+                            <a href=""><p>撸服，仔细想想，人类灵活的双手究竟是如何进化出来的,真的很细心的搞笑了</p></a>
+                        </div>
+                        <ul class="nav-content-list">
+                            <li class="news-like"><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;111</a></li>
+                            <li class="news-comment"><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;222</a></li>
+                            <li class="news-collect"><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;333</a></li>
+                            <li class="news-user"><a href=""><img src="img/user111.jpg" alt="yonghu">&nbsp;agen</a></li>
+                            <li class="news-time"><a href="" style="font-size: 12px">1小时前</a> <small style="color:#f0b02d">发布</small></li>
+                        </ul>
+
+                    </div>
+                    <!--头像栏-->
+                    <div class="content-userlogo">
+                        <a href=""><img src="img/user333.jpg" alt="用户照片"></a>
+                    </div>
+                </div>
+                <!--第三个新闻-->
+                <div class="content-news">
+                    <!--内容及头像图片-->
+                    <div class="content-part">
+                        <div class="content-part1">
+                            <a href=""><p>这位大大的羊毛毡鸟类真的是做得栩栩如生，真的是戳啥像啥....瞅瞅那鲸头鹳，北长尾山雀，翠鸟，金头凯克等等，以及各种鸮各种企鹅......不过感觉麻雀是最爱~</p></a>
+                        </div>
+                        <ul class="nav-content-list">
+                            <li class="news-like"><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;111</a></li>
+                            <li class="news-comment"><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;222</a></li>
+                            <li class="news-collect"><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;333</a></li>
+                            <li class="news-user"><a href=""><img src="img/user111.jpg" alt="yonghu">&nbsp;agen</a></li>
+                            <li class="news-time"><a href="" style="font-size: 12px">2小时前</a> <small style="color:#f0b02d">发布</small></li>
+                        </ul>
+
+                    </div>
+                    <!--头像栏-->
+                    <div class="content-userlogo">
+                        <a href=""><img src="img/user444.jpg" alt="用户照片"></a>
+                    </div>
+                </div>
+                <!--第四个新闻-->
+                <div class="content-news">
+                    <!--内容及头像图片-->
+                    <div class="content-part">
+                        <div class="content-part1">
+                            <a href=""><p>港珠澳大桥正式开通】港珠澳大桥开通仪式23日上午在广东珠海举行。大桥跨越伶仃洋，东接香港，西接广东珠海和澳门，总长约55公里，是粤港澳三地首次合作共建的超大型跨海交通工程。</p></a>
+                        </div>
+                        <ul class="nav-content-list">
+                            <li class="news-like"><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;111</a></li>
+                            <li class="news-comment"><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;222</a></li>
+                            <li class="news-collect"><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;333</a></li>
+                            <li class="news-user"><a href=""><img src="img/user111.jpg" alt="yonghu">&nbsp;agen</a></li>
+                            <li class="news-time"><a href="" style="font-size: 12px">2小时10分钟前</a> <small style="color:#f0b02d">发布</small></li>
+                        </ul>
+
+                    </div>
+                    <!--头像栏-->
+                    <div class="content-userlogo">
+                        <a href=""><img src="img/user555.jpg" alt="用户照片"></a>
+                    </div>
+                </div>
+                <!--第五个新闻-->
+                <div class="content-news">
+                    <!--内容及头像图片-->
+                    <div class="content-part">
+                        <div class="content-part1">
+                            <a href=""><p>能穿在身上的汽车！这款车能直接穿在身上，由一位英国大叔打造。车子的方向盘直接裸露在外面，你只需往座椅上一坐，两侧车门一关，最后把头盔往下一拉，您就“变身”成功了。这辆车最高时速可达50km/h。只是想问：这要是出了事故，是不是连人带车一起送上救护车？</p></a>
+                        </div>
+                        <ul class="nav-content-list">
+                            <li class="news-like"><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;111</a></li>
+                            <li class="news-comment"><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;222</a></li>
+                            <li class="news-collect"><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;333</a></li>
+                            <li class="news-user"><a href=""><img src="img/user111.jpg" alt="yonghu">&nbsp;agen</a></li>
+                            <li class="news-time"><a href="" style="font-size: 12px">2小时30分钟前</a> <small style="color:#f0b02d">发布</small></li>
+                        </ul>
+
+                    </div>
+                    <!--头像栏-->
+                    <div class="content-userlogo">
+                        <a href=""><img src="img/userlogo.jpg" alt="用户照片"></a>
+                    </div>
+                </div>
+                <!--第六个新闻-->
+                <div class="content-news">
+                    <!--内容及头像图片-->
+                    <div class="content-part">
+                        <div class="content-part1">
+                            <a href=""><p>小声比比刚刚回应了，又是一篇10万+惹谁也别惹技术宅！惹谁也别惹有正义感又有闲的技术宅请允许我先膜拜再忠粉</p></a>
+                        </div>
+                        <ul class="nav-content-list">
+                            <li class="news-like"><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;111</a></li>
+                            <li class="news-comment"><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;222</a></li>
+                            <li class="news-collect"><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;333</a></li>
+                            <li class="news-user"><a href=""><img src="img/user111.jpg" alt="yonghu">&nbsp;agen</a></li>
+                            <li class="news-time"><a href="" style="font-size: 12px">3小时30分钟前</a> <small style="color:#f0b02d">发布</small></li>
+                        </ul>
+
+                    </div>
+                    <!--头像栏-->
+                    <div class="content-userlogo">
+                        <a href=""><img src="img/userlogo.jpg" alt="用户照片"></a>
+                    </div>
+                </div>
+                <!--第七个新闻-->
+                <div class="content-news">
+                    <!--内容及头像图片-->
+                    <div class="content-part">
+                        <div class="content-part1">
+                            <a href=""><p>彪悍警花。纽约警察局72分区侦探小队的一位侦探抱怨男女共用的更衣室里到处是他们的女副队长的内裤，女队长大怒，拿起两条自己的内裤，塞进那位手下的嘴里。该侦探三天后向警察局平等就业机会办公室就此提出控告。</p></a>
+                        </div>
+                        <ul class="nav-content-list">
+                            <li class="news-like"><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;111</a></li>
+                            <li class="news-comment"><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;222</a></li>
+                            <li class="news-collect"><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;333</a></li>
+                            <li class="news-user"><a href=""><img src="img/user111.jpg" alt="yonghu">&nbsp;agen</a></li>
+                            <li class="news-time"><a href="" style="font-size: 12px">5小时30分钟前</a> <small style="color:#f0b02d">发布</small></li>
+                        </ul>
+
+                    </div>
+                    <!--头像栏-->
+                    <div class="content-userlogo">
+                        <a href=""><img src="img/userlogo.jpg" alt="用户照片"></a>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+            <!--底部页签栏-->
+            <div id="page-area" class="page-area">
+                <ul class="pagination">
+                    <li><a href="#">&laquo;</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li class="#"><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">&raquo;</a></li>
+                </ul>
+            </div>
+
+
+
+
+        </div>
+        <!--右边标签 图片 广告区-->
+        <div class="content-right">
+            <!--2张图片-->
+            <div class="picture-right">
+                <a href="" id="picture_one"><img src="img/有害信息.png" alt="有害信息"></a>
+                <a href="" id="picture-twe"><img src="img/色情信息.png" alt="色情信息"></a>
+            </div>
+            <div class="content-right-top">
+                <img src="img/小问号.png" alt="问号" id="logo22">
+                <a href=""><strong>如何避免自己被封号</strong></a>
+            </div>
+            <!--不正经app广告跳转-->
+            <a href="">
+                <img src="img/不正经.png" alt="不正经" id="logo33">
+            </a>
+            <div class="top-band" id="top-band">
+                <p class="top-band-type"><strong>24小时<span>top 10</span></strong></p>
+                <div class="top-band-title">
+                    <p class="no-comment-title">最热榜</p>
+                </div>
+                <!--热点内容排行-->
+                <div id="top-contend-news">
+                    <!--单个热点-->
+                    <div class="top-item">
+                        <div class="top-points">
+                            <!--点赞数，点击后跳转至发帖页面-->
+                            <a href="" class="points-a"><span>389</span></a>
+
+                        </div>
+                        <!--点击文字也跳转-->
+                        <a href="" class="top-content">迷魂记：我是如何停止焦虑并爱上喝酒的</a>
+
+                    </div>
+                    <!-- 分割线-->
+                    <hr class="hr0" />
+                    <div class="top-item">
+                        <div class="top-points">
+                            <!--点赞数，点击后跳转至发帖页面-->
+                            <a href="" class="points-a"><span>222</span></a>
+
+                        </div>
+                        <!--点击文字也跳转-->
+                        <a href="" class="top-content">铭记那些值得铭记的时刻</a>
+
+                    </div>
+                    <hr class="hr0" />
+                    <div class="top-item">
+                        <div class="top-points">
+                            <!--点赞数，点击后跳转至发帖页面-->
+                            <a href="" class="points-a"><span>121</span></a>
+
+                        </div>
+                        <!--点击文字也跳转-->
+                        <a href="" class="top-content">为什么当代中国人没法好好谈恋爱结婚</a>
+                    </div>
+                    <hr class="hr0" />
+                    <div class="top-item">
+                        <div class="top-points">
+                            <!--点赞数，点击后跳转至发帖页面-->
+                            <a href="" class="points-a"><span>99</span></a>
+
+                        </div>
+                        <!--点击文字也跳转-->
+                        <a href="" class="top-content">那些你暗恋过的人现在都怎么样了？</a>
+                    </div>
+                    <hr class="hr0" />
+                </div>
+
+            </div>
+            <!--广告跳转-->
+            <a href="">
+                <img src="img/广告.png" alt="广告" id="logo44">
+            </a>
+        </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<script src="jquery.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</html>
